@@ -20,8 +20,8 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.mdp.kafka.def.KafkaConstants;
 
 public class BurstReview {
-	public static final int FIFO_SIZE = 7;
-	public static final int EVENT_START_TIME_INTERVAL = 31536000;
+	public static final int FIFO_SIZE = 10;
+	public static final int EVENT_START_TIME_INTERVAL = 31536000 / 12;
 	public static final int EVENT_END_TIME_INTERVAL = 2 * EVENT_START_TIME_INTERVAL;
 	public final static SimpleDateFormat MOVIE_DATE = new SimpleDateFormat("yyyy");
 	
@@ -66,13 +66,15 @@ public class BurstReview {
 						if(gap <= EVENT_START_TIME_INTERVAL && !inEvent) {
 							inEvent = true;
 							events++;
-							System.out.println("START event-id:"+ events +": start:" + oldest.timestamp() + " value:" + oldest.value() + " rate:" + FIFO_SIZE + " records in " + gap + " ms");
+							System.out.println("START event-id:"+ events +": start:" + oldest.timestamp() + " value:" + oldest.value() + " rate:" + FIFO_SIZE + " records in " + gap + " s");
+							if(oldest.timestamp() >= unixDate && oldest.timestamp() < unixDate + 31536000 * 4) {
+								System.out.println("Efecto pelicula");
+							}
 						} else if(gap >= EVENT_END_TIME_INTERVAL && inEvent) {
 							inEvent = false;
-							System.out.println("END event:" + events + " rate:" + FIFO_SIZE + " records in " + gap + " ms");
+							System.out.println("END event:" + events + " rate:" + FIFO_SIZE + " records in " + gap + " s");
 							System.out.println(unixDate + " " + record.timestamp());
-							System.out.println(EVENT_START_TIME_INTERVAL + " " + EVENT_END_TIME_INTERVAL);
-							if(record.timestamp() >= unixDate && record.timestamp() < unixDate + 31536000 * 4.5) {
+							if(record.timestamp() >= unixDate && record.timestamp() < unixDate + 31536000 * 4) {
 								System.out.println("Efecto pelicula");
 							}
 						}
