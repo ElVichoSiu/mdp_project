@@ -11,7 +11,7 @@ wikipedia_dataset.py: Código de python utilizado para crear un dataset de libro
 
 sortCSV.py: Script utilizado para ordenar un archivo CSV, particularmente se trata de "Books_rating" ordenado por "review/time". Esto es útil y necesario para facilitar el análisis posterior (burst) que posee sentido si los datos están ordenados cronológicamante.
 
-merged.py: Código de python encargado de fusionar dos archivos CSV, específicamente "books_data" y el que se produce con wikipedia_dataset.py como primer dataset es decir "combined_fiction_to_film" en un único archivo. Este script permite unir información dispersa (por ejemplo, libro + reseñas + adaptación) en un solo archivo estructurado. Este script permitió conocer que existen 1421 coincidencias. 
+merged.py: Código de python encargado de fusionar dos archivos CSV, específicamente "books_data" y el que se produce con wikipedia_dataset.py como primer dataset es decir "combined_fiction_to_films.csv" en un único archivo. Este script permite unir información dispersa (por ejemplo, libro + reseñas + adaptación) en un solo archivo estructurado. Este script permitió conocer que existen 1421 coincidencias. 
 Además, en este código se incluyo generar "nombres.txt" un archivo de texto que contine la columna "fiction_work" y "film_adaptation" (de esta se obtiene solo el año). 
 
 En mdp-kafka-project se encuentra el corazon del proyecto, que es el proyecto de Kafka que permite procesar los datos de manera masiva. 
