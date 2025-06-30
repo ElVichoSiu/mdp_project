@@ -4,9 +4,10 @@ El siguiente repositorio contiene todos los archivos utilizados para realizar el
 
 wikipedia_dataset.py: Código de python utilizado para crear un dataset de libros que tienen adaptaciones a películas a partir de las páginas de wikipedia listadas en el siguiente [URL](https://en.wikipedia.org/wiki/Lists_of_works_of_fiction_made_into_feature_films), este termina creando un csv que contiene lo siguiente: 
     "fiction_work": Título del libro
-    "Film_adaptation": Nombre de película basada en el libro junto con su fecha de estreno ("Película (año)")
+    "Film_adaptation": Nombre de película basada en el libro junto con su fecha de estreno 
     "releaseDate": Fecha de publicación del libro
     "author": Autor del libro
+    "us_release_date": Fecha de estreno de la película en USA, en formato yyyy-mm-dd
 
 sortCSV.py: Script utilizado para ordenar un archivo CSV, particularmente se trata de "Books_rating" ordenado por "review/time". Esto es útil y necesario para facilitar el análisis posterior (burst) que posee sentido si los datos están ordenados cronológicamante.
 
