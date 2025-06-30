@@ -168,7 +168,7 @@ def get_final_release_date(row):
     if date:
         return date
     elif pd.notnull(row['parsed_year']):
-        return f"{row['parsed_year']}-01-01"
+        return f"{int(row['parsed_year'])}-01-01"
     else:
         return None
 
@@ -178,4 +178,3 @@ df['film_adaptation'] = df['parsed_title']
 df = df.drop(columns=['parsed_title', 'parsed_year'])
 
 df.to_csv('final_fiction_to_film.csv', index=False)
-print("✅ Done! File saved as combined_with_clean_titles_and_dates.csv")
