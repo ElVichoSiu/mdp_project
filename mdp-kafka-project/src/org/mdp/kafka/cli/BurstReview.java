@@ -23,7 +23,7 @@ public class BurstReview {
 	public static final int FIFO_SIZE = 10;
 	public static final int EVENT_START_TIME_INTERVAL = 31536000 / 12;
 	public static final int EVENT_END_TIME_INTERVAL = 2 * EVENT_START_TIME_INTERVAL;
-	public final static SimpleDateFormat MOVIE_DATE = new SimpleDateFormat("yyyy");
+	public final static SimpleDateFormat MOVIE_DATE = new SimpleDateFormat("yyyy-MM-dd");
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		if(args.length!=2){
