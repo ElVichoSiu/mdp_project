@@ -24,7 +24,7 @@ Para ejecutar el proyecto de Kafka, se debe seguir los siguientes pasos:
 5. En el equipo se deberan abrir 3 terminales y ejecutar los siguientes comandos, en el orden indicado:
    - Terminal 1: `java -jar mdp-kafka.jar BurstReview review-burst (fecha de estreno de la película, en formato yyyy-mm-dd)`
    - Terminal 2: `java -jar mdp-kafka.jar MovieFilter reviews-example review-burst (nombre del libro)`
-   - Terminal 3: `java -jar mdp-kafka.jar AmazonSimulator /data/2025/uhadoop/projects/grupo2/sorted3.csv reviews-example 100000` (En este caso se utiliza el archivo sort3.csv que es el resultado de sortCSV.py, pero se puede utilizar cualquier archivo CSV con la misma estructura y la ubicacion es la de la maquina del curso).
+   - Terminal 3: `java -jar mdp-kafka.jar AmazonSimulator /data/2025/uhadoop/projects/grupo2/sorted3.csv reviews-example 100000` (En este caso se utiliza el archivo sorted3.csv que es el resultado de sortCSV.py, pero se puede utilizar cualquier archivo CSV con la misma estructura y la ubicacion es la de la maquina del curso).
 6. Una vez que se hayan ejecutado los comandos, se debe esperar a que el proceso termine. Esto puede tardar un tiempo dependiendo del tamaño del archivo CSV y la cantidad de datos que se estén procesando.
 
 ## Integrantes del equipo:
